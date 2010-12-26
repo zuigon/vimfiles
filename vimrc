@@ -313,7 +313,7 @@ nnoremap <leader>t :CommandT<CR>
 noremap Q gq
 
 "make Y consistent with C and D
-nnoremap Y y$
+"nnoremap Y y$
 
 "bindings for ragtag
 inoremap <M-o>       <Esc>o
@@ -402,5 +402,18 @@ nmap <D-[> <<
 nmap <D-]> >>
 vmap <D-[> <gv
 vmap <D-]> >gv
+
+if has("autocmd")
+  autocmd bufwritepost .vimrc source $MYVIMRC
+endif
+
+" Bubble single lines
+nmap <C-S-Up> [e
+nmap <C-S-Down> ]e
+" Bubble multiple lines
+vmap <C-S-Up> [egv
+vmap <C-S-Down> ]egv
+
+colo twilight
 
 let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'} 
