@@ -227,6 +227,7 @@ set wildignore=*.o,*.obj,*~ "stuff to ignore when tab completing
 "display tabs and trailing spaces
 "set list
 "set listchars=tab:\ \ ,extends:>,precedes:<
+"set listchars=tab:\▸,extends:>,precedes:<,eol:\¬
 " disabling list because it interferes with soft wrap
 
 set formatoptions-=o "dont continue comments when pushing o/O
@@ -261,7 +262,7 @@ if has("gui_running")
     colorscheme railscasts
     set guitablabel=%M%t
     set lines=40
-    set columns=115
+    set columns=160
 
     if has("gui_gnome")
         set term=gnome-256color
@@ -274,7 +275,7 @@ if has("gui_running")
         " key binding for Command-T to behave properly
         " uncomment to replace the Mac Command-T key to Command-T plugin
         "macmenu &File.New\ Tab key=<nop>
-        "map <D-t> :CommandT<CR>
+        map <D-t> :CommandT<CR>
         " make Mac's Option key behave as the Meta key
         set invmmta
         try
@@ -414,6 +415,16 @@ nmap <C-S-Down> ]e
 vmap <C-S-Up> [egv
 vmap <C-S-Down> ]egv
 
-colo twilight
+nmap <D-S-Left> :bp<CR>
+nmap <D-S-Right> :bn<CR>
+
+nmap <leader>l :set list!<CR>
+
+if has('gui_running')
+  colorscheme ir_black
+  set transparency=5
+else
+  colorscheme twilight
+endif
 
 let ScreenShot = {'Icon':0, 'Credits':0, 'force_background':'#FFFFFF'} 
