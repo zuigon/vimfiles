@@ -106,3 +106,9 @@
 	path = bundle/securemodelines
 	url = git://github.com/ciaranm/securemodelines.git
   ignore = dirty
+[submodule "bundle/rvm"]
+	path = bundle/rvm
+	url = git://github.com/csexton/rvm.vim.git
+[submodule "bundle/sessionman"]
+	path = bundle/sessionman
+	url = git://github.com/vim-scripts/sessionman.vim.git
